@@ -1,32 +1,32 @@
-// получение всех пользователей
+// Getting all users
 const getUsers = () => JSON.parse(localStorage.getItem('users'))
-// Добавление всех пользователей
+// Add all users
 const setUsers = (users = []) => localStorage.setItem('users', JSON.stringify(users))
-//Проверка валидации
+//Validation check
 const checkValidation = (value = '', reg = new RegExp('')) => (!value || !reg.test(value))
-// Добавление валидации в поле ввода
+// Add validation of input field
 const addValidationInput = (input = {}, reg = new RegExp('')) => {
     const {value} = input
     input.style.background = checkValidation(value, reg) ? 'pink' : 'white'
     return checkValidation(value, reg)
 }
-// Добавление валидации полям ввода по потере фокуса
+// Adding validation of input fields for loss of focus
 const addBlurInput = (input = {}, reg = new RegExp('')) => {
     input.addEventListener('blur', (e) => {
         const {value} = e.target
         input.style.background = checkValidation(value, reg) ? 'pink' : 'white'
     })
 }
-// Замена нижнего подчеркивания
+// Replace underscore
 const replaceUnderscore = (str = '') => str.replace('_', ' ')
-// Создание имя  классов на основе констант
+// Create class name based on constants
 const createClassName = (str = '') => str.replace('_', '-').toLowerCase()
-// Преобразование времени
+// Time transformation
 const formatTime = (time = 0) => {
     const duration = moment.duration(time, 'seconds')
     return `${Math.floor(duration.asMinutes())}m ${duration.seconds()}s`
 }
-// Сброс базовых значений при перезагрузке игры
+// Reset base values on game restart
 const resetGame = () => {
     config.score = FULL_BASE_CONFIGURATION.TIME
     config.lvl = FULL_BASE_CONFIGURATION.LEVEL
@@ -34,13 +34,13 @@ const resetGame = () => {
     config.click = FULL_BASE_CONFIGURATION.YOUR_COINS
     config.time = FULL_BASE_CONFIGURATION.START_TIME
 }
-//Изменение изображений
+//Change pictures
 const changePictures = (root = {}, img = '', character = true) => {
     const path = ASSETS[character ? 'CHARACTER' : 'BACKGROUND']
     const format = character ? 'png' : 'jpg'
     root.style.backgroundImage = `url(${path}${img}.${format})`
 }
-//Изменение фона
+//Change background
 const changeBackground = (root = {}, registration = false, win = false) => {
     let img = config.lvl
     if (registration) img = 'startscreen'

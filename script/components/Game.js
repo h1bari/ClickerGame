@@ -1,4 +1,4 @@
-// Компонент запуска игры и панели статистики
+// Startup component and statistics bar
 const Game = (user = null) => {
     if (!user) {
         const users = getUsers() || []

@@ -1,4 +1,4 @@
-//Компонент авторизации
+//Component authorization
 const Authorization = () => {
     const users = getUsers() || []
     const root = document.getElementById('root')
@@ -10,7 +10,7 @@ const Authorization = () => {
     const authInput = node.querySelector('#auth')
     const signUpBtn = node.querySelector('.signUp')
 
-    //Функция проверки соответствия пользователя
+    //User compliance check function
     const toAuthorization = (e) => {
         e.preventDefault()
         e.stopPropagation()
@@ -20,7 +20,7 @@ const Authorization = () => {
         node.remove()
         Game(...user)
     }
-    // Функция перехода на регистрацию
+    // Registration transition function
     const toRegistration = (e) => {
         node.remove()
         Registration()

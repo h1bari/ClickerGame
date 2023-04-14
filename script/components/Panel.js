@@ -1,4 +1,4 @@
-// Компонент статистики
+// Component statistics
 const Panel = (user = {}) =>{
     const root = document.getElementById('root')
     const node = document.createElement('ul')
@@ -13,7 +13,7 @@ const Panel = (user = {}) =>{
         <li class="ui-text"><button class="exit">Exit</button></li>
     `
     const  exitButton = node.querySelector('.exit')
-    //Выход на экран регистрации
+    //Exit to Registration screen
     const toExit = () => {
         node.remove()
         document.querySelector('#game').remove()

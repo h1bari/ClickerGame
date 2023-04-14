@@ -1,4 +1,4 @@
-// Шаблон формы регистрации
+// Registration form template
 const registrationTemplate = `
             <form action="" class="form">
             <h2 class="form-name">Create account</h2>
@@ -25,7 +25,7 @@ const registrationTemplate = `
         </form>
     `
 
-// Шаблон формы входа
+// Sign in form template
 const authorizationTemplate = `
     <form action="" class="form in">
             <h2 class="form-name">Sign in</h2>
@@ -40,6 +40,5 @@ const authorizationTemplate = `
             <div class="form-button">
                  <a href="#" class="signUp">Sign up</a>
             </div>
-            
         </form>
 `

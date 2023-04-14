@@ -1,4 +1,4 @@
-// Хранение локальных данных
+// Store local data
 const config = {
     score: FULL_BASE_CONFIGURATION.TIME,
     lvl: FULL_BASE_CONFIGURATION.LEVEL,

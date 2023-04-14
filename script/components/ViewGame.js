@@ -1,17 +1,17 @@
-//Компонент отрисовки игры
+// Component rendering game
 const ViewGame = (user = {}) => {
-    //Отображение данных статистики текущего пользователя
+    //To display current user statistics
     const renderDataPanel = ({score, hp, lvl}) => {
         document.querySelector('.hp').textContent = hp
         document.querySelector('.level').textContent = lvl
         document.querySelector('.your-coins').textContent = score
 
     }
-    //Таймер счета
+    //Timer score
     const timer = setInterval(() => {
         config.time++
     }, 1000)
-        //Удаление элементов игры и переход на win Screen
+        //Remove Game Elements and transition to Win Screen
     const clearGame = (node = {}) => {
         document.querySelector('#panel').remove()
         node.remove()
@@ -28,7 +28,7 @@ const ViewGame = (user = {}) => {
     node.append(enemy)
     changeBackground(root)
     changePictures(enemy, config.lvl)
-    //Функция нажатия на персонажа
+    //Character click function
     const handleClick = (e) => {
         const {MAX_LVL, SCALE_COIN, DEFAULT_STEP, MIN_HP, HP} = FULL_BASE_CONFIGURATION
         config.score += SCALE_COIN

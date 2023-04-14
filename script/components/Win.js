@@ -1,4 +1,4 @@
-// Компонент  окна выиграша
+// Win screen component
 const Win = (user = {}) => {
     const root = document.getElementById('root')
     const node = document.createElement('div')
@@ -9,15 +9,15 @@ const Win = (user = {}) => {
     node.append(field)
     changeBackground(root, false, true)
     const users = getUsers() || []
-    //Функция сравнения лучшего времени и текущего
+    //Function to compare the best time and current
     const checkTime = (best = 0, current = 0) => (best === 0 || current < best)
-    //Обновление данных пользователя
+    //Update user data
     const updateUser = {
         ...user,
         TIME: config.time,
         BEST_TIME: checkTime(user.BEST_TIME, config.time) ? config.time : user.BEST_TIME,
     }
-    //Перезапуск игры
+    //Restart game
     const toStartGame = (e) =>{
         node.remove()
         resetGame()

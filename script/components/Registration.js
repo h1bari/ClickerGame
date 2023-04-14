@@ -1,16 +1,16 @@
-//Компонент регистрации
+//Registration component
 const Registration = () => {
-    //Старт игры
+    //Start game
     const startGame = (node = {}, users = []) => {
         setUsers(users)
         node.remove()
         Game()
     }
-    //Проверка на существующих пользователей
+    //Check duplicate user
     const checkDuplicate = (users = [], values = {}) => {
         return users.some(el => el.NICK_NAME === values.NICK_NAME || el.EMAIL === values.EMAIL)
     }
-//Создание объекта с данными пользователя
+//Creating an Object with User Data
     const createValuesObject = () => {
         return {
             USER_NAME: userNameInput.value,
@@ -19,13 +19,13 @@ const Registration = () => {
             ...BASE_TIME,
         }
     }
-    //Переход на авторизацию
+    //Transition to authorization
     const toAuth = (e) =>{
         e.preventDefault()
         node.remove()
         Authorization()
     }
-    //Создание нового пользователя
+    //Create new user
     const onSubmit = (e) => {
         e.preventDefault()
         const values = createValuesObject()

@@ -1,22 +1,22 @@
-// Регулярки для проверки формы
+// Regular expressions to check form
 const REG_FORM = {
     USER_NAME: /^[a-zA-Zа-яА-ЯёЁ_][a-zA-Zа-яА-ЯёЁ0-9_-]{0,}$/,
     NICK_NAME: /^[a-zA-Z_][a-zA-Z0-9_.+$-]{0,}$/,
     EMAIL: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
 }
-// Для добавления в новых пользовотелей
+// Base time for a new user
 const BASE_TIME = {
     TIME: 0,
     BEST_TIME: 0,
 }
-// Базовое отображение панели
+// Basic data display of the bar
 
 const BASE_CONFIGURATION = {
     HP: 5,
     LEVEL: 1,
     YOUR_COINS: 0,
 }
-// Все базовые конфиги
+// All basic configuration
 const FULL_BASE_CONFIGURATION = {
     ...BASE_CONFIGURATION,
     ...BASE_TIME,
@@ -26,7 +26,7 @@ const FULL_BASE_CONFIGURATION = {
     MIN_HP: 0,
     START_TIME: 0
 }
-//Данные для winScreen
+//Data for winScreen
 const TEXT_CONSTANTS = {
     WIN_TEXT: 'Congratulation you end the game,',
     NEXT_LVL_TEXT : 'Congratulation you clear this LVL!',
@@ -35,7 +35,7 @@ const TEXT_CONSTANTS = {
     ALL_BEST_TIME : 'All best time: ',
     TIME_TEXT : 'Your time: ',
 }
-// Путь к ассетам
+// Assets path
 const ASSETS = {
     BACKGROUND: './images/backgrounds/',
     CHARACTER: './images/characters/',
